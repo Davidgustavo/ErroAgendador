@@ -1,0 +1,128 @@
+{
+  "auth": {
+    "customId": "auth",
+    "queryName": "Autenticar",
+    "screen": "",
+    "sourceType": "entityFullName",
+    "entitySimpleName": "User",
+    "entityFullName": "app.entity.User",
+    "query": "select o from User o where o.login \u003d :login",
+    "queryParamsValues": [
+      {
+        "fieldName": "login",
+        "fieldValue": ""
+      }
+    ],
+    "verbs": {
+      "GET": false,
+      "POST": false,
+      "PUT": false,
+      "DELETE": false
+    },
+    "events": {},
+    "defaultValues": {},
+    "security": {},
+    "errorHandles": {},
+    "serviceUrl": "api/cronapi/query/auth/"
+  },
+  "roles": {
+    "customId": "roles",
+    "queryName": "Obter Autorização",
+    "screen": "",
+    "sourceType": "entityFullName",
+    "entitySimpleName": "Role",
+    "entityFullName": "app.entity.Role",
+    "query": "select o.id from Role o where o.user.login \u003d :login",
+    "queryParamsValues": [
+      {
+        "fieldName": "login",
+        "fieldValue": ""
+      }
+    ],
+    "verbs": {
+      "GET": false,
+      "POST": false,
+      "PUT": false,
+      "DELETE": false,
+      "FILTER": true
+    },
+    "events": {},
+    "defaultValues": {},
+    "security": {},
+    "calcFields": {},
+    "calcFieldsSecurity": {},
+    "errorHandles": {},
+    "serviceUrl": "api/cronapi/query/roles/"
+  },
+  "query604918": {
+    "customId": "teste",
+    "queryName": "teste",
+    "sourceType": "blockly",
+    "baseEntity": "app.entity.Arquivo",
+    "blockly": {
+      "type": "server",
+      "blocklyMethod": "Executar",
+      "blocklyClass": "blockly.Consulta",
+      "blocklyLanguage": "java",
+      "blocklyParams": [],
+      "blocklyJson": {
+        "namespace": "blockly.Consulta",
+        "sourcePath": "src/main/java/blockly/consulta.blockly",
+        "language": "java",
+        "methods": [
+          {
+            "name": "Executar",
+            "hasReturn": "true",
+            "params": []
+          }
+        ]
+      },
+      "blocklyGETMethod": "Executar",
+      "blocklyPOSTMethod": "default",
+      "blocklyPUTMethod": "default",
+      "blocklyDELETEMethod": "default",
+      "blocklyFILTERMethod": "default",
+      "blocklyCOUNTMethod": "Executar"
+    },
+    "query": "",
+    "queryParamsValues": [],
+    "verbs": {
+      "GET": true,
+      "POST": true,
+      "PUT": true,
+      "DELETE": true,
+      "FILTER": true,
+      "COUNT": true
+    },
+    "events": {},
+    "defaultValues": {},
+    "defaultValuesProperties": {
+      "ext_arq": {
+        "key": false,
+        "nullable": true,
+        "type": "String"
+      },
+      "arquivo": {
+        "key": false,
+        "nullable": true,
+        "type": "byte[]"
+      },
+      "id": {
+        "key": true,
+        "nullable": false,
+        "type": "String"
+      },
+      "nome_arq": {
+        "key": false,
+        "nullable": true,
+        "type": "String"
+      }
+    },
+    "security": {},
+    "calcFields": {},
+    "calcFieldsSecurity": {},
+    "calcFieldsProperties": {},
+    "errorHandles": {},
+    "serviceUrl": "api/cronapi/query/query604918/"
+  }
+}
